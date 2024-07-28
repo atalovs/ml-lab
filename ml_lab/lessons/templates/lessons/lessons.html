@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lessons</title>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/competitions/">Competitions</a></li>
+        <li><a href="/lessons/">Lessons</a></li>
+        <li><a href="/playground/">Playground</a></li>
+    </ul>
+</nav>
+<h1>Lessons:</h1>
+<div>
+    {% for lesson in lessons %}
+    <div>
+        <h2>{{ lesson.title }}</h2>
+        <p>{{ lesson.description }}</p>
+        <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/{{ lesson.youtube_url|cut:'https://www.youtube.com/watch?v=' }}"
+                frameborder="0" allowfullscreen></iframe>
+    </div>
+    {% endfor %}
+</div>
+</body>
+</html>
